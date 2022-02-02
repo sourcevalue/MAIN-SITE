@@ -34,10 +34,39 @@
       background-color: hsl(50, 100%, 50%);
       border: .25vmin solid black;
     }
+    
+    #image {
+            display: none;
+        }
   </style>
   <script src="game.js" defer type="module"></script>
 </head>
 <body>
   <div id="game-board"></div>
+  <div>
+  <img id="image" src=
+"./panic.png"
+            alt="Google Classroom" />
+    </div
+  
+  
+  <button type="button"
+     onclick="show()" id="btnID">
+     Test
+  </button>
+  
+  
+    <script>
+        function show() {
+ 
+            /* Access image by id and change
+            the display property to block*/
+            document.getElementById('image')
+                    .style.display = "block";
+ 
+            document.getElementById('btnID')
+                    .style.display = "none";
+        }
+    </script>
 </body>
 </html>
