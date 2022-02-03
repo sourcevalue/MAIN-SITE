@@ -1,0 +1,14 @@
+$ PARSE_% -S -T @local
+$ COMPILE @parse -S
+$ RUN @output.yam
+
+$ HOOK @svr %_root
+$ IF_RES(LOOP >> ENUM.VAL >>
+> DATA @local _STRING(%)
+> LOG {"HOOK REQUESTED TO SERVER"}
+> CNCT @svr #local
+> OUTPUT ALL
+> BREAK << )
+
+$ CNCT @svr [data_hop:1,perm:4]
+$ SVR RUN -S -M
