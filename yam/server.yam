@@ -1,1 +1,11 @@
+$ TYPE @svr
+$ O_TYPE @local -E #bin.yam
 
+$ RUN #ignite.yam
+$ PARSE #ignite @svr >> (
+> HOOK DS_%
+> SVR -M %
+> LOOP [@all]
+<< )
+
+$ GRAB %SVR
