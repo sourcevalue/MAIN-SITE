@@ -1,0 +1,4 @@
+$ DUMP -LOUD @local
+$ DUMP -LOUD @svr
+
+$ SAVE_% @all #bin
