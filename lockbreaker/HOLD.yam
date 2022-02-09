@@ -1,5 +1,0 @@
-$ TAG_% #full -I 
-$ DELETE @HOLD.yam
-
-$ LOG {"DELETING HOLD FILES"}
-$ / This is a hold file for .yam!
