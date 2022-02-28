@@ -1,0 +1,124 @@
+body {
+        background-color: #eee;
+    }
+
+#ui {
+    position: absolute;
+    top: 5px;
+}
+
+
+    h1 {
+            margin-bottom: 50px;
+            font-size: 26px;
+    }
+    h2 {
+        margin-bottom: 50px;
+        font-size: 18px;
+        display: inline-block;
+        margin-right: 25px;
+    }
+
+
+#citetext1a, #citetext2a, #citetext3a, #citetext4a, #citetext5a, #citetext1b, #citetext2b, #citetext3b,  #citetext4b, #citetext5b, #citetext1c, #citetext2c, #citetext3c,  #citetext4c, #citetext5c {
+    width: 745px;
+    height: 45px;
+    display: inline-block;
+    margin: 0px 20px 15px 100px;
+
+}
+#citePageNum1a, #citePageNum2a, #citePageNum3a,  #citePageNum4a,  #citePageNum5a, #citePageNum1b, #citePageNum2b, #citePageNum3b, #citePageNum4b, #citePageNum5b, #citePageNum1c, #citePageNum2c, #citePageNum3c, #citePageNum4c,  #citePageNum5c {
+    vertical-align:top;
+    width: 20px;
+    height: 45px;
+    display: inline-block;
+    clear: right;
+}
+
+#showmenu4a,#showmenu5a,#showmenu4b,#showmenu5b,#showmenu4c,#showmenu5c {
+    margin-left:100px;
+    margin-bottom:5px;
+    color:#666;
+    /*     background-color: #CCC; */
+    padding: 0px 0px 0px 4px;
+    width: 10px;
+    border: 1px #BEBEBE dotted;
+}
+
+#supportingArg1,#supportingArg2,#supportingArg3{
+    display: inline-block;
+    width: 858px;
+    height: 45px;
+    margin-left:40px;
+    margin-bottom:30px;
+
+
+}
+
+        #main {
+            margin: 50px 50px 75px 100px;
+            font-family: aria, sans-serif;
+            font-size: 12px;
+/*             border: thin #999 dotted; */
+        }
+        h3 {font-size: 2em;
+        margin: 20px 0px -10px 0px;
+        }
+        .outputbutton {
+            margin: 10px 20px 10px 0px;
+         
+        }
+        .output {
+            width: 900px;
+            height: 500px;
+            border: 3px solid #cccccc;
+            padding: 5px;
+            font-family: arial, sans-serif;
+
+        }
+
+        button#up, button#down {
+            display: none;
+        }
+        
+
+        .lable {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .lableindent3,.supportingarguments1header,.supportingarguments2header,.supportingarguments3header{
+        margin-left:100px;
+        font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .supportingargumentsheader{
+        margin-left:43px;
+        font-size: 16px;
+        margin-bottom: 10px;
+            margin-top:15px;
+        font-weight: bold;
+        }
+        .example {
+            font-size: 14px;
+            color: #9A9A9A;
+            margin: 0px 0px 0px 10px;
+            font-weight: normal;
+        }
+#concluding_thought, #thesis{
+            width: 900px;
+            height: 50px;
+            margin-bottom:25px;
+            }
+
+    a {
+        text-decoration: none;
+        color: #808080;
+        border: 1px #BFBFBF dotted;
+        padding: 2px 5px 2px 5px;
+    }
+
+
+
