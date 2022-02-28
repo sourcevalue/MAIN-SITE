@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Essay Outliner</title>
+	<meta name="generator" content="BBEdit 10.5" />
+	
+	<script src="js/jquery.min.js">
+	</script>
+
+
+  	    <link id="styleSheetSelect" href="css/edit.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<!--   <link rel="stylesheet" href="http://jqueryui.com/jquery-wp-content/themes/jqueryui.com/style.css"> -->
+<link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+
+</head>
+<body>
+<div id="main">
+	<form id="essayForm" action="javascript:void();">
+		<h1>
+			Essay Writer 
+		</h1>
+		<div class="lable">
+			Thesis <span class="example"> The main idea - or thesis – I want to convey or prove is: </span> 
+		</div>
+<textarea id="thesis" name="thesis" oninput="timeSinceLastCall();"></textarea>
+		<div class="supportingargumentsheader">
+			Supporting Argument 1 <span class="example"> (At least 3) – The main points - or reasons that support my thesis - are: </span> 
+		</div>
+		<div class="supportingdetails1" style="border:0px;margin:0px;padding:0px;">
+			<textarea id="supportingArg1" name="supportingArg1" oninput="timeSinceLastCall();"></textarea>
+			<div class="lableindent3">
+				Supporting Details <span class="example"> My evidence – or quote - for this statement is: </span> 
+			</div>
+			<textarea id="citetext1a" name="citetext1a" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum1a" name="citePageNum1a" type="text" value="">
+			<br>
+			<textarea id="citetext2a" name="citetext2a" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum2a" name="citePageNum2a" type="text" value="">
+			<br>
+			<textarea id="citetext3a" name="citetext3a" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum3a" name="citePageNum3a" type="text" value="">
+			<br>
+			<div id="showmenu4a" name="showmenu4a">
+				+ 
+			</div>
+			<div id="supportingdetails4a" name="supportingdetails4a" style="display: none;">
+				<textarea id="citetext4a" name="citetext4a" oninput="timeSinceLastCall();"></textarea>
+				<input id="citePageNum4a" name="citePageNum4a" type="text" value="">
+				<br>
+				<div id="showmenu5a" name="showmenu5a">
+					+ 
+				</div>
+				<div id="supportingdetails5a" name="supportingdetails5a" style="display: none;">
+					<textarea id="citetext5a" name="citetext5a" oninput="timeSinceLastCall();"></textarea>
+					<input id="citePageNum5a" name="citePageNum5a" type="text" value="">
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="supportingargumentsheader">
+			Supporting Argument 2 <span class="example"> (At least 3) – The main points - or reasons that support my thesis - are: </span> 
+		</div>
+		<div class="supportingdetails2">
+			<textarea id="supportingArg2" name="supportingArg2" oninput="timeSinceLastCall();"></textarea>
+			<div class="lableindent3">
+				Supporting Details <span class="example"> My evidence – or quote - for this statement is: </span> 
+			</div>
+			<textarea id="citetext1b" name="citetext1b" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum1b" name="citePageNum1b" type="text" value="">
+			<br>
+			<textarea id="citetext2b" name="citetext2b" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum2b" name="citePageNum2b" type="text" value="">
+			<br>
+			<textarea id="citetext3b" name="citetext3b" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum3b" name="citePageNum3b" type="text" value="">
+			<br>
+			<div id="showmenu4b" name="showmenu4b">
+				+ 
+			</div>
+			<div id="supportingdetails4b" name="supportingdetails4b" style="display: none;">
+				<textarea id="citetext4b" name="citetext4b" oninput="timeSinceLastCall();"></textarea>
+				<input id="citePageNum4b" name="citePageNum4b" type="text" value="">
+				<br>
+				<div id="showmenu5b" name="showmenu5b">
+					+ 
+				</div>
+				<div id="supportingdetails5b" name="supportingdetails5b" style="display: none;">
+					<textarea id="citetext5b" name="citetext5b" oninput="timeSinceLastCall();"></textarea>
+					<input id="citePageNum5b" name="citePageNum5b" type="text" value="">
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="supportingargumentsheader">
+			Supporting Argument 3 <span class="example"> (At least 3) – The main points - or reasons that support my thesis - are: </span> 
+		</div>
+		<div class="supportingdetails3">
+			<textarea id="supportingArg3" name="supportingArg3" oninput="timeSinceLastCall();"></textarea>
+			<div class="lableindent3">
+				Supporting Details <span class="example"> My evidence – or quote - for this statement is: </span> 
+			</div>
+			<textarea id="citetext1c" name="citetext1c" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum1c" name="citePageNum1c" type="text" value="">
+			<br>
+			<textarea id="citetext2c" name="citetext2c" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum2c" name="citePageNum2c" type="text" value="">
+			<br>
+			<textarea id="citetext3c" name="citetext3c" oninput="timeSinceLastCall();"></textarea>
+			<input id="citePageNum3c" name="citePageNum3c" type="text" value="">
+			<br>
+			<div id="showmenu4c" name="showmenu4c">
+				+ 
+			</div>
+			<div id="supportingdetails4c" name="supportingdetails4c" style="display: none;">
+				<textarea id="citetext4c" name="citetext4c" oninput="timeSinceLastCall();"></textarea>
+				<input id="citePageNum4c" name="citePageNum4c" type="text" value="">
+				<br>
+				<div id="showmenu5c" name="showmenu5c">
+					+ 
+				</div>
+				<div id="supportingdetails5c" name="supportingdetails5c" style="display: none;">
+					<textarea id="citetext5c" name="citetext5c" oninput="timeSinceLastCall();"></textarea>
+					<input id="citePageNum5c" name="citePageNum5c" type="text" value="">
+					<br>
+				</div>
+			</div>
+		</div>
+		<div class="lable">
+			Concluding Thought <span class="example">The final thought I want my reader to take away with them is: </span> 
+		</div>
+		<textarea id="concluding_thought" name="concluding_thought" oninput="timeSinceLastCall();"></textarea>
+		<div class="buttonlinkcontainer">
+			<input type="button" id="output_button" name="output_button" name="output_button" value="Combine Text" class="outputbutton">
+		</div>
+		<textarea id="essay_output" name="essay_output" class="output">output 
+
+	</textarea>
+	<div id="btnContainer" style="float:right !important;"><button id="up">^</button>
+<button id="down">^</button></div>
+	</form>
+</div>
+<div id="ui">
+    <select id="changeCss">
+            <option  value="edit">Edit</option>
+            <option value="review">Review</option>
+    </select>
+    <button id="cleardata">Clear Essay Fields</button><button id="sampletext"><span class="buttonlabel">&nbsp;Add Sample Text</span>
+</div>
+
+<div id="dialog-confirm-sample_text" title="Insert Demo Text?" style="visibility:hidden">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>This action will overwrite the fields with demo text. Any writing you've done will be deleted. Are you sure?</p>
+</div>
+<div id="dialog-confirm-clear_form" title="Clear All Text Fields?" style="visibility:hidden">
+  <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to reset the form? All your writing will be lost.</p>
+</div>
+
+ 
+ 
+
+
+<script>
+$(document).ready(function(){
+
+
+/* INSERT SAMPLE TEXT START */
+var theSampleText = {
+        'thesis' : 'Catcher is a story about man’s inhumanity to man.',
+        'supportingArg1' : ' People are really mean to Holden in this book.',
+        'citetext1a' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at quam id ante condimentum eleifend euismod non nulla.',
+        'citetext2a' : 'Holden is called an idiot.  Nunc quam ex, vestibulum non placerat a, fringilla non orci. Fusce vitae gravida justo. Donec posuere est vitae sem sagittis, non hendrerit est vestibulum. Vivamus urna lectus, malesuada eget accumsan quis, elementum ac neque. Donec eget lorem posuere sapien maximus semper vitae eget massa. Aliquam scelerisque sed urna sit amet accumsan. Nullam auctor, nunc eu fermentum consequat, magna nunc faucibus lorem, vel rhoncus dui erat et tortor. Donec fringilla nibh sit amet leo volutpat ultrices. Mauris lectus massa, convallis nec elit eu, eleifend consequat odio. Fusce faucibus dapibus massa, ut aliquet dui aliquet ut.',
+        'citetext3a' : 'Sam tells him, "You are a loser." Praesent eu rhoncus dolor. Vivamus tempor mi in dui maximus cursus. Pellentesque et tellus pulvinar, consectetur libero id, tristique neque.',
+        'citetext4a' : 'Fusce magna augue, eleifend vel libero nec, condimentum porttitor libero. Etiam tincidunt, purus et volutpat tincidunt, massa ante maximus leo, ac posuere lorem tellus et enim. Phasellus pretium, turpis eget gravida lacinia, ligula nisl elementum enim, a mollis diam nunc vitae leo. Proin dapibus nec quam vel auctor.',
+        'citetext5a' : 'Phasellus pretium, turpis eget gravida lacinia, ligula nisl elementum enim, a mollis diam nunc vitae leo. Proin dapibus nec quam vel auctor. Duis convallis, metus ut facilisis rutrum, risus felis viverra leo, vitae maximus diam massa vitae lorem. Sed id luctus purus, id elementum lectus.',
+        'supportingArg2' : 'Holden is unkind to everyone he meets in New York City.',
+        'citetext1b' : 'He makes Sally cry. Nunc lacinia erat volutpat fermentum rutrum. Nunc orci ligula, egestas porttitor urna ac, facilisis ultricies nulla. Donec feugiat, est et tristique vehicula, quam velit gravida est, sed molestie turpis nisl ac tortor.',
+        'citetext2b' : 'He steals from his teacher. Pellentesque suscipit tortor libero, feugiat ullamcorper lacus tempus at. Morbi sollicitudin augue metus, sed sagittis dolor rutrum sed. Duis ipsum lacus, porta vitae blandit eget, bibendum nec nisi. Nam pulvinar consequat iaculis.',
+        'citetext3b' : 'He calls his friend, a big phony. Nulla pulvinar nisl ut semper dignissim. Quisque ultrices libero id magna dictum viverra. Sed consequat tellus justo.',
+        'citetext4b' : 'Aenean faucibus sagittis finibus. Nullam sed placerat orci. Mauris nibh ex, eleifend vitae nisi eget, maximus venenatis lorem. Maecenas ornare justo sit amet purus elementum, quis congue risus lacinia. Aenean dictum massa vel dignissim semper.',
+        'citetext5b' : 'Vestibulum nec tortor sed felis bibendum maximus. Quisque tempus ex sit amet augue varius, eleifend ultricies sem vestibulum. Donec vel leo semper, molestie tortor in, eleifend purus.',
+        'supportingArg3' : 'People never apologize in this book even after doing something very cruel.',
+        'citetext1c' : 'When Holden makes Phoebe sick, he doesn’t say he’s sorry. Proin laoreet libero neque. Nam iaculis ligula sit amet enim auctor pharetra. In quis massa mi. Praesent ut accumsan ligula, ac mattis ex. Cras id molestie orci.',
+        'citetext2c' : 'His teacher says, “Suck it up” after giving Holden an F. Phasellus at sollicitudin lacus, vel mattis ante. Vestibulum ac metus rutrum neque maximus pretium sit amet aliquam ex. Pellentesque at urna turpis. Sed malesuada placerat porta.',
+        'citetext3c' : 'After breaking Holden’s nose, the doorman laughs at him. Ut vestibulum pellentesque nunc, vitae congue urna aliquet interdum. Pellentesque facilisis magna quis mattis auctor. Praesent tellus dolor, tincidunt quis ligula in, efficitur vestibulum turpis.',
+        'citetext4c' : 'Aenean consequat ultrices arcu vel sagittis. Quisque sem arcu, faucibus eget tellus sit amet, cursus viverra eros. Sed in magna id lorem sollicitudin elementum maximus non augue.',
+        'citetext5c' : 'Nam a odio ac ante ornare blandit non eu lacus. Morbi vel dictum erat. Aliquam orci ex, pellentesque sit amet tempor vel, dictum a erat. Suspendisse eros magna, egestas eu commodo id, mattis a quam. Vestibulum non quam rhoncus, suscipit ligula ut, laoreet sapien. Vivamus luctus, nisl nec consectetur tempor, dui velit facilisis neque, at bibendum justo nunc non lectus.',
+        'concluding_thought' : 'Salinger must have had a really bad childhood to write such a depressing book in which everyone is so mean.'    
+    };
+
+$( "button#sampletext" ).click(function() {
+
+    $("div#dialog-confirm-sample_text").css("visibility","visible");
+    $("div#dialog-confirm-sample_text" ).dialog({
+      resizable: false,
+      height:160,
+      modal: true,
+      buttons: {
+        "Continue": function() {
+            insertSampleText();
+          $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+
+    function insertSampleText(){
+        for (var key in theSampleText) {
+          if (theSampleText.hasOwnProperty(key)) {
+            $("#" + key).val(theSampleText[key]); 
+          }
+        }
+    }
+
+});
+/* INSERT SAMPLE TEXT END */
+
+/* START CLEAR FIELDS AND DATA */
+$( "#cleardata" ).click(function() {
+
+    $( "button#cleardata" ).click(function() {
+
+        $("div#dialog-confirm-clear_form").css("visibility","visible");
+        $("div#dialog-confirm-clear_form" ).dialog({
+          resizable: false,
+          height:160,
+          modal: true,
+          buttons: {
+            "Clear Text": function() {
+                insertSampleText();
+              $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+              $( this ).dialog( "close" );
+            }
+          }
+        });
+
+        function insertSampleText(){
+            localStorage.removeItem("textFieldDate");
+            $('#essayForm').trigger("reset");
+        }
+
+    });
+
+});
+/* END CLEAR FIELDS AND DATA */
+
+
+
+$( "#changeCss" ).change(function() {
+
+     $("link#styleSheetSelect").attr("href", "css/" + $("#changeCss").val() + ".css");
+
+    // alert("theincrement is " + theincrement);     
+             theincrement = 0;
+    // alert("theincrement has been changed to " + theincrement);     
+    
+    if($("#changeCss").val() === "review"){
+    
+        /* :: REVIEW MODE VIEW :: */    
+    
+        /* :: STYLES FOR BUTTONS :: */    
+        $("textarea#thesis").css("display", "inline-block");
+        $("div#ui").css("position", "absolute");        
+        $("div#ui").css("display", "block");
+        $("div#ui").css("top", "5px");
+        $("div#ui").css("left", "15px");
+        $("select#changeCss").css("display", "inline");
+        $("button#cleardata").css("display", "none");             
+        $("div#btnContainer").css("display", "inline-block");
+//         $("div#btnContainer").css("float", "right");
+        $("button#up").css("background-color", "#666");
+        $("button#up").css("display", "block");
+        $("button#down").css("display", "block");
+
+
+        /* :: RESET DOM DISPLAY VALUES FOR EDIT PAGE :: */   
+        $("div.supportingdetails1").css("display", "none");
+        $("textarea#supportingArg1").css("display", "none");                
+        $("textarea#citetext1a").css("display", "none");
+        $("textarea#citetext2a").css("display", "none");
+        $("textarea#citetext3a").css("display", "none");
+        $("div#supportingdetails4a").css("display", "none");
+        $("textarea#citetext4a").css("display", "none");
+        $("div#supportingdetails5a").css("display", "none");
+        $("textarea#citetext5a").css("display", "none");
+
+        $("div.supportingdetails2").css("display", "none");
+        $("textarea#supportingArg2").css("display", "none");                
+        $("textarea#citetext1b").css("display", "none");
+        $("textarea#citetext2b").css("display", "none");
+        $("textarea#citetext3b").css("display", "none");
+        $("div#supportingdetails4b").css("display", "none");
+        $("textarea#citetext4b").css("display", "none");
+        $("div#supportingdetails5b").css("display", "none");
+        $("textarea#citetext5b").css("display", "none");
+
+        $("div.supportingdetails3").css("display", "none");
+        $("textarea#supportingArg3").css("display", "none");                
+        $("textarea#citetext1c").css("display", "none");
+        $("textarea#citetext2c").css("display", "none");
+        $("textarea#citetext3c").css("display", "none");
+        $("div#supportingdetails4c").css("display", "none");
+        $("textarea#citetext4c").css("display", "none");
+        $("div#supportingdetails5c").css("display", "none");
+        $("textarea#citetext5c").css("display", "none");
+         
+    }
+    else {   /* :: EDIT MODE VIEW :: */    
+
+
+        /* :: STYLES FOR BUTTONS :: */    
+        $("div#ui").css("position", "absolute");        
+        $("div#ui").css("display", "block");
+        $("div#ui").css("top", "5px");
+        $("div#ui").css("left", "15px");             
+        $("select#changeCss").css("display", "inline");        
+        $("button#cleardata").css("display", "inline"); 
+
+//         $("div#btnContainer").css("display", "none");        
+        $("button#up").css("display", "none");
+        $("button#down").css("display", "none");
+        
+
+
+
+        /* :: RESET DOM DISPLAY VALUES FOR EDIT PAGE :: */    
+        $("#thesis").css("display", "inline-block");
+        $("div.supportingdetails1").css("display", "block");
+        $("textarea#supportingArg1").css("display", "inline-block");                
+        $("textarea#citetext1a").css("display", "inline-block");
+        $("textarea#citetext2a").css("display", "inline-block");
+        $("textarea#citetext3a").css("display", "inline-block");
+        $("div#supportingdetails4a").css("display", "block");
+        $("textarea#citetext4a").css("display", "inline-block");
+        $("div#supportingdetails5a").css("display", "block");
+        $("textarea#citetext5a").css("display", "inline-block");
+
+        $("div.supportingdetails2").css("display", "block");
+        $("textarea#supportingArg2").css("display", "inline-block");                
+        $("textarea#citetext1b").css("display", "inline-block");
+        $("textarea#citetext2b").css("display", "inline-block");
+        $("textarea#citetext3b").css("display", "inline-block");
+        $("div#supportingdetails4b").css("display", "block");
+        $("textarea#citetext4b").css("display", "inline-block");
+        $("div#supportingdetails5b").css("display", "block");
+        $("textarea#citetext5b").css("display", "inline-block");
+
+        $("div.supportingdetails3").css("display", "block");
+        $("textarea#supportingArg3").css("display", "inline-block");                
+        $("textarea#citetext1c").css("display", "inline-block");
+        $("textarea#citetext2c").css("display", "inline-block");
+        $("textarea#citetext3c").css("display", "inline-block");
+        $("div#supportingdetails4c").css("display", "block");
+        $("textarea#citetext4c").css("display", "inline-block");
+        $("div#supportingdetails5c").css("display", "block");
+        $("textarea#citetext5c").css("display", "inline-block");
+
+    
+    }
+        
+        
+    });
+
+
+/* ::::::::::::::::::::::::::::::::::::::::::::: */
+var theincrement = 0;
+
+$( "#up" ).click(function() {
+// alert(theincrement);
+    if(theincrement >= 1 ){
+        
+        theincrement--;
+        
+        
+        switch(theincrement) {
+
+            case 0:
+
+                $("div.supportingdetails1").css("display", "none");
+                $("textarea#supportingArg1").css("display", "none");
+                
+                $("#thesis").css("display", "inline-block");
+                $("#up").css("background-color", "#666");
+
+
+            break;
+
+            case 1:
+                $("textarea#citetext1a").css("display", "none");
+                $("textarea#supportingArg1").css("display", "inline-block");
+                
+            break;
+
+            case 2:
+
+                $("textarea#citetext2a").css("display", "none");
+                $("textarea#citetext1a").css("display", "inline-block");
+            break;
+
+            case 3:
+
+                $("textarea#citetext3a").css("display", "none");
+                $("textarea#citetext2a").css("display", "inline-block");
+            break;
+
+            case 4:
+
+                $("div#supportingdetails4a").css("display", "none");
+                $("textarea#citetext4a").css("display", "none");
+                $("textarea#citetext3a").css("display", "inline-block");
+            break;
+
+            case 5:
+
+
+                $("div#supportingdetails5a").css("display", "none");                
+                $("textarea#citetext5a").css("display", "none");
+                $("textarea#citetext4a").css("display", "inline-block");
+
+            break;
+
+            case 6:
+                $("textarea#supportingArg2").css("display", "none");
+                $("div.supportingdetails2").css("display", "none");
+                $("div.supportingdetails1").css("display", "inline-block");
+                $("div#supportingdetails4a").css("display", "inline-block");                
+                $("div#supportingdetails5a").css("display", "inline-block");                
+                $("textarea#citetext5a").css("display", "inline-block");
+
+            break;
+
+            case 7:
+                $("textarea#citetext1b").css("display", "none");
+
+                $("textarea#supportingArg2").css("display", "inline-block");
+
+            break;
+
+            case 8:
+                $("textarea#citetext2b").css("display", "none");
+                $("textarea#citetext1b").css("display", "inline-block");
+
+            break;
+
+            case 9:
+                $("textarea#citetext3b").css("display", "none");
+                $("textarea#citetext2b").css("display", "inline-block");
+            break;
+
+            case 10:
+
+                $("div#supportingdetails4b").css("display", "none");
+                $("textarea#citetext4b").css("display", "none");
+                $("textarea#citetext3b").css("display", "inline-block");
+            break;
+
+            case 11:
+                $("div#supportingdetails5b").css("display", "none");
+                $("textarea#citetext5b").css("display", "none");
+                $("div#supportingdetails4b").css("display", "inline-block");
+                $("textarea#citetext4b").css("display", "inline-block");
+            break;
+
+            case 12:
+                $("textarea#supportingArg3").css("display", "none");
+                $("div.supportingdetails3").css("display", "none");
+                $("div.supportingdetails2").css("display", "inline-block");
+                $("div#supportingdetails5b").css("display", "inline-block");
+                $("textarea#citetext5b").css("display", "inline-block");
+            break;
+
+            case 13:
+                $("textarea#citetext1c").css("display", "none");
+                $("textarea#supportingArg3").css("display", "inline-block");                            
+            break;
+
+            case 14:
+
+                $("textarea#citetext2c").css("display", "none");
+                $("textarea#citetext1c").css("display", "inline-block");
+            break;
+            
+            case 15:
+                $("textarea#citetext3c").css("display", "none")
+                $("textarea#citetext2c").css("display", "inline-block");
+            break;
+
+            case 16:
+                $("div#supportingdetails4c").css("display", "none");
+                $("textarea#citetext4c").css("display", "none");
+                $("textarea#citetext3c").css("display", "inline-block");          
+            break;
+            
+            case 17:
+                $("div#supportingdetails5c").css("display", "none");
+                $("textarea#citetext5c").css("display", "none");
+                $("div#supportingdetails4c").css("display", "inline-block");
+                $("textarea#citetext4c").css("display", "inline-block");                
+
+            break;
+            
+            case 18:
+                $("textarea#concluding_thought").css("display", "none");
+                $("div.supportingdetails3").css("display", "inline-block");
+                $("div#supportingdetails5c").css("display", "inline-block");
+                $("textarea#citetext5c").css("display", "inline-block");
+                $("#down").css("background-color", "#999");                
+                
+            break;
+
+
+            default:
+             // code block
+
+        }
+        
+    }
+
+
+    // Increment for next time (this also needs to uncommented elsewhere):
+    
+/* :: THE FOLLOWING LINE HAPPENS IN TWO PLACES IN THIS FILE :: */
+//     $("body").append(theincrement);
+
+});
+
+$( "#down" ).click(function() {
+// alert(theincrement);
+    if(theincrement <= 18){   
+
+        theincrement++;
+        
+        switch(theincrement) {
+
+            case 1:
+                $("#thesis").css("display", "none");
+                $("html, body, div#main, form").css("display", "block");
+                $("div.supportingdetails1").css("display", "inline-block");
+                $("textarea#supportingArg1").css("display", "inline-block");
+                $("#up").css("background-color", "#999");
+
+            break;
+
+            case 2:
+                $("textarea#supportingArg1").css("display", "none");                
+                $("textarea#citetext1a").css("display", "inline-block");
+            break;
+
+            case 3:
+                $("textarea#citetext1a").css("display", "none");
+                $("textarea#citetext2a").css("display", "inline-block");
+            break;
+
+            case 4:
+                $("textarea#citetext2a").css("display", "none");
+                $("textarea#citetext3a").css("display", "inline-block");
+
+            break;
+
+            case 5:
+                $("textarea#citetext3a").css("display", "none");
+                $("div#supportingdetails4a").css("display", "inline-block");
+                $("textarea#citetext4a").css("display", "inline-block");
+            break;
+
+            case 6:
+                $("textarea#citetext4a").css("display", "none");
+                $("div#supportingdetails5a").css("display", "inline-block");
+                $("textarea#citetext5a").css("display", "inline-block");
+            break;
+
+            case 7:
+                $("div#supportingdetails5a").css("display", "none");
+                $("textarea#citetext5a").css("display", "none");
+                $("div.supportingdetails1").css("display", "none");
+                $("div.supportingdetails2").css("display", "inline-block");
+                $("textarea#supportingArg2").css("display", "inline-block");
+
+            break;
+
+            case 8:
+                $("textarea#supportingArg2").css("display", "none");
+                $("textarea#citetext1b").css("display", "inline-block");
+            break;
+
+            case 9:
+                $("textarea#citetext1b").css("display", "none");
+                $("textarea#citetext2b").css("display", "inline-block");
+
+            break;
+
+            case 10:
+                $("textarea#citetext2b").css("display", "none");
+                $("textarea#citetext3b").css("display", "inline-block");
+            break;
+
+            case 11:
+                $("textarea#citetext3b").css("display", "none");
+                $("div#supportingdetails4b").css("display", "inline-block");
+                $("textarea#citetext4b").css("display", "inline-block");
+            break;
+
+            case 12:
+                $("textarea#citetext4b").css("display", "none");
+                $("div#supportingdetails5b").css("display", "inline-block");
+                $("textarea#citetext5b").css("display", "inline-block");
+            break;
+
+            case 13:
+                $("div#supportingdetails5b").css("display", "none");
+                $("div.supportingdetails2").css("display", "none");
+                $("div.supportingdetails3").css("display", "inline-block");
+                $("textarea#supportingArg3").css("display", "inline-block");
+            break;
+
+            case 14:
+                $("textarea#supportingArg3").css("display", "none");
+                $("textarea#citetext1c").css("display", "inline-block");
+                            
+            break;
+
+            case 15:
+                $("textarea#citetext1c").css("display", "none");
+                $("textarea#citetext2c").css("display", "inline-block");
+
+            break;
+
+            case 16:
+                $("textarea#citetext2c").css("display", "none");
+                $("textarea#citetext3c").css("display", "inline-block");
+            
+            break;
+            
+            case 17:
+                $("textarea#citetext3c").css("display", "none");
+                $("div#supportingdetails4c").css("display", "inline-block");
+                $("textarea#citetext4c").css("display", "inline-block");
+            break;
+            
+            case 18:
+                $("textarea#citetext4c").css("display", "none");            
+                $("div#supportingdetails5c").css("display", "inline-block");
+                $("textarea#citetext5c").css("display", "inline-block");
+            break;
+            
+            case 19:
+                $("div#supportingdetails5c").css("display", "none");
+                $("textarea#citetext5c").css("display", "none");
+                $("div.supportingdetails3").css("display", "none");
+                $("textarea#concluding_thought").css("display", "inline-block");
+                $("#down").css("background-color", "#666");
+            break;
+            
+            default:
+             // code block
+        }
+    
+    }
+/* :: THE FOLLOWING LINE HAPPENS IN TWO PLACES IN THIS FILE :: */
+//     $("body").append(theincrement);
+});
+
+
+
+/* :::::::::::::::::::::ON BROWSER LOAD RETRIEVE DATA IN LOCAL STORAGE AND PUT BUCK INTO TEXT FIELDS :::::::::::::::::::::: */
+
+// If local storage is !null then
+var localDBSting = localStorage.getItem("textFieldDate");
+// alert( "local storage is this " + localDBSting);
+
+function parseData(localDBSting){
+//  Data is one long url encoded string at this point. Make an Array of text area name pair values.
+
+    if(localDBSting !== null){
+        var formFields = localDBSting.split("&");
+        for (i = 0; i < formFields.length; i++) { 
+    //         alert(formFields[i]);    
+
+
+    // Loop through array of name pair values, remove plus signs andh then un-encode and set as value of text fields
+        if(formFields[i] !== null){
+            var formValuePairs = formFields[i].split("=");
+
+                formValuePairs[0] = decodeURIComponent(formValuePairs[0]).replace(/\+/g, ' ');
+                formValuePairs[1] = decodeURIComponent(formValuePairs[1]).replace(/\+/g, ' ');
+                $("textarea#" + formValuePairs[0]).val(formValuePairs[1]);    
+
+            }
+        }
+        
+    }
+
+}
+
+parseData(localDBSting);
+
+/* ::::::::::::::::::::::HIDE SHOW 4TH AND 5TH SUPPORTING ARGUMENTS:::::::::::::::::::::::: */
+
+    $(document).ready(function() {
+        $('#showmenu4a').click(function() {
+                $('#supportingdetails4a').slideToggle("fast");
+                $(this).text($(this).text() == '-' ? '+' : '-');
+        });
+    });
+    
+    $(document).ready(function() {
+        $('#showmenu5a').click(function() {
+                $('#supportingdetails5a').slideToggle("fast");
+                $(this).text($(this).text() == '-' ? '+' : '-');
+        });
+    });    
+
+    $(document).ready(function() {
+        $('#showmenu4b').click(function() {
+                $('#supportingdetails4b').slideToggle("fast");
+                $(this).text($(this).text() == '-' ? '+' : '-');
+        });
+    });    
+    $(document).ready(function() {
+        $('#showmenu5b').click(function() {
+                $('#supportingdetails5b').slideToggle("fast");
+                $(this).text($(this).text() == '-' ? '+' : '-');
+        });
+    });    
+    $(document).ready(function() {
+        $('#showmenu4c').click(function() {
+                $('#supportingdetails4c').slideToggle("fast");
+                $(this).text($(this).text() == '-' ? '+' : '-');
+        });
+    });    
+    $(document).ready(function() {
+        $('#showmenu5c').click(function() {
+                $('#supportingdetails5c').slideToggle("fast");
+                $(this).text($(this).text() == '-' ? '+' : '-');
+        });
+    });    
+
+
+/* ::::::::::::::::::::::BUILD FACEBOOK SHARE STRING:::::::::::::::::::::::: */
+    $( "#output_button" ).on( "click", function() {
+
+        /* 
+        this function builts this string based on user input
+
+        */
+
+        var theThesis = $('#thesis').val();
+        
+        var theSupportingArg1 = $('#supportingArg1').val();
+        var citeText1a = $('#citetext1a').val();
+        var citePageNum1a = $('#citePageNum1a').val();
+        var citeText2a = $('#citetext2a').val();
+        var citePageNum2a = $('#citePageNum2a').val();
+        var citeText3a = $('#citetext3a').val();
+        var citePageNum3a = $('#citePageNum3a').val();
+        var citeText4a = $('#citetext4a').val();
+        var citePageNum4a = $('#citePageNum4a').val();
+        var citeText5a = $('#citetext5a').val();
+        var citePageNum5a = $('#citePageNum5a').val();
+        
+        var theSupportingArg2 = $('#supportingArg2').val();
+        var citeText1b = $('#citetext1b').val();
+        var citePageNum1b = $('#citePageNum1b').val();
+        var citeText2b = $('#citetext2b').val();
+        var citePageNum2b = $('#citePageNum2b').val();
+        var citeText3b = $('#citetext3b').val();
+        var citePageNum3b = $('#citePageNum3b').val();
+        var citeText4b = $('#citetext4b').val();
+        var citePageNum4b = $('#citePageNum4b').val();
+        var citeText5b = $('#citetext5b').val();
+        var citePageNum5b = $('#citePageNum5b').val();
+        
+        var theSupportingArg3 = $('#supportingArg3').val();
+        var citeText1c = $('#citetext1c').val();
+        var citePageNum1c = $('#citePageNum1c').val();
+        var citeText2c = $('#citetext2c').val();
+        var citePageNum2c = $('#citePageNum2c').val();
+        var citeText3c = $('#citetext3c').val();
+        var citePageNum3c = $('#citePageNum3c').val();
+        var citeText4c = $('#citetext4c').val();
+        var citePageNum4c = $('#citePageNum4c').val();
+        var citeText5c = $('#citetext5c').val();
+        var citePageNum5c = $('#citePageNum5c').val();
+        
+        var concluding_thought = $('#concluding_thought').val();
+
+
+        var lineBreak  = '\r';
+        var aTab = '\t';
+        var aSpace = ' ';
+        
+        /* add formatiing */
+        var theThesis = theThesis + lineBreak + lineBreak;
+        
+        var SupArg1_and_Citiations = aTab + theSupportingArg1 + aSpace + citeText1a + aSpace + citePageNum1a + aSpace + citeText2a + aSpace + citePageNum2a + aSpace + citeText3a + aSpace + citePageNum3a + aSpace + citeText4a + aSpace + citePageNum4a + aSpace + citeText5a + aSpace + citePageNum5a + lineBreak + lineBreak;
+        var SupArg1_and_Citiations = SupArg1_and_Citiations + aTab + theSupportingArg2 + aSpace + citeText1b + aSpace + citePageNum1b + aSpace + citeText2b + aSpace + citePageNum2b + aSpace + citeText3b + aSpace + citePageNum3b + aSpace + citeText4b + aSpace + citePageNum4b + aSpace + citeText5b + aSpace + citePageNum5b + lineBreak + lineBreak;
+        var SupArg1_and_Citiations = SupArg1_and_Citiations + aTab + theSupportingArg3 + aSpace + citeText1c + aSpace + citePageNum1c + aSpace + citeText2c + aSpace + citePageNum2c + aSpace + citeText3c + aSpace + citePageNum3c + aSpace + citeText4c + aSpace + citePageNum4c + aSpace + citeText5c + aSpace + citePageNum5c + lineBreak + lineBreak;
+        var SupArg1_and_Citiations = SupArg1_and_Citiations + concluding_thought;
+
+        var fullEssayString = theThesis + SupArg1_and_Citiations;
+        $('#essay_output').val(fullEssayString);
+    });
+
+});
+
+/* LOCAL STORAGE START */
+
+// Check browser support
+if (typeof(Storage) != "undefined") {
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* This code is should be called when a form element with the oninput call has content changed */
+    // http://www.w3schools.com/jsref/event_oninput.asp
+
+    /* Compares time lapsed between last call. Used for calculating 30 second auto save */
+    var timeSinceLastCall = (function () {
+        var lastCall = 0;
+        return function () {
+        var currentDate = new Date();
+            if (currentDate - lastCall < (1000 * 6))
+                return false;
+            lastCall = currentDate;
+            // Call local storage function:
+            SaveToLocalDate();
+        }
+    })();
+
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    /* Invoke save form values to local storage */
+    function SaveToLocalDate(){
+
+        // alert("we are still in business");
+
+        /* The following returns a URL Encoded string in name value pairs of all form elements */
+        var allData = $("form").serialize();
+//         alert(allData);
+        localStorage.setItem("textFieldDate", allData);
+
+    }
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+} else {
+    //document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+    // Idea: There could be a speciic div for error messages via innerHTTML...
+}
+
+/* LOCAL STORAGE END */
+
+</script>
+</body>
+</html>
